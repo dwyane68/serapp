@@ -4,13 +4,13 @@
      <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card">
-                            <div class="header">
+                        <div class="card card-plain">
+                            <div class="card-header" data-background-color="purple">
                                 <h4 class="title">Striped Table with Hover</h4>
                                 <p class="category">Here is a subtitle for this table</p>
                             </div>
-                            <div class="content table-responsive table-full-width">
-                                <table class="table table-hover table-striped">
+                            <div class="card-content table-responsive ">
+                                <table class="table table-hover ">
                                     <thead>
                                       <th>ID</th>
                                     	<th>Email</th>
@@ -28,9 +28,9 @@
                                                 <div class="user-edit">
                                                     <h3>Edit User</h3>
                                                     {{#if isAdmin}}
-                                                     <button class="toggle-admin">Remove Admin</button>
+                                                     <button class="btn toggle-admin btn-danger">Remove Admin</button>
                                                     {{else}}
-                                                      <button  class="toggle-admin">Make Admin</button>
+                                                      <button  class="btn toggle-admin btn-danger">Make Admin</button>
                                                     {{/if}}
                                                 </div>
 

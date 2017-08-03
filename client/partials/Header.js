@@ -1,6 +1,6 @@
 Template.Header.events({
     'click .login-toggle':()=> {
-        Modal.show("LoginModal");
+        FlowRouter.go('/admin/login');
  },
  'click .logout':()=> {
      AccountsTemplates.logout();

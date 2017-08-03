@@ -31,3 +31,5 @@ twbs:bootstrap
 useraccounts:materialize
 peppelg:bootstrap-3-modal
 raix:handlebar-helpers
+jquery
+mouse0270:bootstrap-notify

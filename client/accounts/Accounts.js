@@ -1,5 +1,5 @@
 var myLogoutFunc = function() {
-    FlowRouter.go('/');
+    FlowRouter.go('/admin/login');
 }
 
 AccountsTemplates.configure({
