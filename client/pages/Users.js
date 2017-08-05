@@ -12,7 +12,16 @@ Template.Users.helpers({
         return this.emails[0].address;
     },
     Role:function(){
-       return Roles.userIsInRole(this._id,'admin')?'admin':'normal-user';
+        if(Roles.userIsInRole(this._id,'admin')){
+       return 'admin';
+        }
+        else if(Roles.userIsInRole(this._id,'seller'))
+        {
+            return 'seller';
+        }
+        else{
+            return 'normal-user'
+        }
     },
     isAdmin:function(){
       return Roles.userIsInRole(this._id,'admin')?'admin':'';

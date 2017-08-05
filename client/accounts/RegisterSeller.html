@@ -1,0 +1,22 @@
+<template name="Registerseller">
+
+<div class="main-panel content">
+
+<form>
+         {{#if $not currentUser}}
+    
+    <input type="email" name="email" placeholder="email">
+        <input type="text" name="name">
+    <input type="password" name="password">
+         {{/if}}
+          <input type="text" name="website" placeholder="website">
+        <input type="text" name="store" placeholder="store">
+         <input type="submit" name="Signup">
+
+</form>
+
+
+
+</div>
+
+</template>
