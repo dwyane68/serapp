@@ -24,6 +24,15 @@ Meteor.methods({
 
     Roles.addUsersToRoles(Meteor.userId(),['seller']);
 
-    }
-
+    },
+	removeUser(id){
+		if(Roles.userIsInRole(id,'normal-user')){
+            Meteor.users.remove(id)
+		}
+	},
+	removeSeller(id){
+		if(Roles.userIsInRole(id,'seller')){
+            Meteor.users.remove(id)
+		}
+	}
 });

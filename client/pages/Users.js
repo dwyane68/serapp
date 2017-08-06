@@ -25,11 +25,23 @@ Template.Users.helpers({
     },
     isAdmin:function(){
       return Roles.userIsInRole(this._id,'admin')?'admin':'';
+    },
+	isUser:function(){
+      return Roles.userIsInRole(this._id,'normal-user')?'normal-user':'';
+    },
+	isSeller:function(){
+      return Roles.userIsInRole(this._id,'seller')?'seller':'';
     }
 });
 
 Template.Users.events({
     'click .toggle-admin':function(){
      Meteor.call('toggleAdmin',this._id);
+    },
+	'click .remove-user':function(){
+     Meteor.call('removeUser',this._id);
+    },
+	'click .remove-seller':function(){
+     Meteor.call('removeSeller',this._id);
     }
 })
