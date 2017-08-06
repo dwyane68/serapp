@@ -1,0 +1,129 @@
+<template name="showUsers">
+<ul class="nav">
+<li id="adm" style="float:left;"><div class="card-header" data-background-color="purple">
+                                <h4 class="title">Admin</h4>
+                                <p class="category"></p>
+                            </div></li>
+
+<li id="us" style="float:left;"><div class="card-header" data-background-color="purple">
+                                <h4 class="title">Users</h4>
+                                <p class="category"></p>
+                            </div></li>
+							
+<li id="sel" style="float:left;"><div class="card-header" data-background-color="purple">
+                                <h4 class="title">Seller</h4>
+                                <p class="category"></p>
+                            </div></li>			
+</ul>							
+{{#if showadmins}}
+ <div class="card-content adm table-responsive ">
+                                <table class="table table-hover ">
+                                    <thead>
+                                      <th>ID</th>
+                                    	<th>Email</th>
+                                        <th>CreatedAt</th>
+                                    	<th>Role</th>
+                                    
+                                    </thead>
+                                    <tbody>
+                                        {{#each users}}
+										{{#if isAdmin}}
+                                         <tr>
+                                            <td>{{_id}}</td>
+                                        	<td>{{userEmail}}</td>
+                                        	<td>{{createdAt}}</td>
+                                            <td>{{Role}}
+                                                <div class="user-edit">
+                                                    <h3>Edit User</h3>
+                                                    {{#if isAdmin}}
+                                                     <button class="btn toggle-admin btn-danger">Remove Admin</button>
+                                                    {{/if}}
+                                                </div>
+
+                                            
+                                            </td>
+                                         </tr>
+										 {{/if}}
+                                      {{/each}}
+                                                        
+                                    </tbody>
+                                </table>
+
+                            </div>
+		{{/if}}				
+{{#if showusers}}		
+	<div class="card-content us table-responsive ">
+                                <table class="table table-hover ">
+                                    <thead>
+                                      <th>ID</th>
+                                    	<th>Email</th>
+                                        <th>CreatedAt</th>
+                                    	<th>Role</th>
+                                    
+                                    </thead>
+                                    <tbody>
+                                        {{#each users}}
+										{{#if isUser}}
+                                         <tr>
+                                            <td>{{_id}}</td>
+                                        	<td>{{userEmail}}</td>
+                                        	<td>{{createdAt}}</td>
+                                            <td>{{Role}}
+                                                <div class="user-edit">
+                                                    <h3>Edit User</h3>
+                                                    {{#if isUser}}
+                                                     <button class="btn toggle-admin btn-danger">Make Admin</button>
+													 <button class="btn remove-user btn-danger">Delete</button>
+                                                    {{/if}}
+                                                </div>
+
+                                            
+                                            </td>
+                                         </tr>
+										 {{/if}}
+                                      {{/each}}
+                                                        
+                                    </tbody>
+                                </table>
+
+                            </div>
+	{{/if}}
+	
+	{{#if showsellers}}
+	<div class="card-content sel table-responsive ">
+                                <table class="table table-hover ">
+                                    <thead>
+                                      <th>ID</th>
+                                    	<th>Email</th>
+                                        <th>CreatedAt</th>
+                                    	<th>Role</th>
+                                    
+                                    </thead>
+                                    <tbody>
+                                        {{#each users}}
+										{{#if isSeller}}
+                                         <tr>
+                                            <td>{{_id}}</td>
+                                        	<td>{{userEmail}}</td>
+                                        	<td>{{createdAt}}</td>
+                                            <td>{{Role}}
+                                                <div class="user-edit">
+                                                    <h3>Edit User</h3>
+                                                    {{#if isSeller}}
+                                                     <button class="btn toggle-admin btn-danger">Make Admin</button>
+													 <button class="btn remove-seller btn-danger">Delete</button>
+                                                    {{/if}}
+                                                </div>
+
+                                            
+                                            </td>
+                                         </tr>
+										 {{/if}}
+                                      {{/each}}
+                                                        
+                                    </tbody>
+                                </table>
+
+                            </div>	
+{{/if}}							
+</template>
